@@ -1,7 +1,7 @@
 # PlayingWithRust
 Basics of Rust programming language
 
-Introduction
+# Introduction
 Rust is a C like programming language for hardware and easy to use as a scripting language
 It combines power and simplicity in its eco-system.
 
@@ -13,11 +13,11 @@ the keywords and symbols they contain mean.
 First of all lets introduce a quick list of testing tools 
 They will be useful as long as we go far 
 
-SoapUI
+#SoapUI
 is a tool for functional testing, mainly of web services like SOAP based web services and 
 RESTful web services, but also HTTP based services and JMS Services as well as databases.
 
-SOAtest
+#SOAtest
 
 Advanced REST client allows you to test your APIs
 
@@ -97,8 +97,8 @@ https://gotham.rs/
 
 
 
-Install Rust
-
+#Install Rust
+'''shell
 Installing rustup on Linux or macOS
 rustup is an installer for the systems programming language Rust
 curl https://sh.rustup.rs -sSf | sh
@@ -108,6 +108,8 @@ cd rust
 cp config.toml.example config.toml
 ./x.py build && ./x.py install
 ./x.py install cargo 
+    
+'''
 or set the build.extended key in 
 config.toml to true
 
@@ -146,7 +148,7 @@ Windows: "%USERPROFILE%\.rustup\toolchains\lib\rustlib\nightly-x86_64-pc-windows
 
 
 
-rustEditors
+#RustEditors
 
 Launch VSCodium Quick Open (Ctrl+P), paste the following command, and press enter.
 codium install rust-lang.rust
@@ -172,7 +174,7 @@ Add NeoBundle 'rust-lang/rust.vim' to ~/.vimrc
 Re-open vim or execute :source ~/.vimrc
 
 
-Clippy requiring a nightly compiler.
+#Clippy requiring a nightly compiler.
 
 rustup install nightly
 rustup default nightly
@@ -207,7 +209,7 @@ In VSCodium go to Settings using cmd-, and put the following config elements the
 
 
 
-Frameworks
+#Frameworks
 
 High-Level Server Frameworks
 actix-web  	 Base framework tokio
@@ -215,17 +217,17 @@ rocket	 Base framework hyper
 warp    Base framework hyper
 iron    Base framework hyper
 
-Low-Level Frameworks
+#Low-Level Frameworks
 hyper
 
-Frontend Frameworks
+#Frontend Frameworks
 tauri
 seed
 yew
 
 
 
-Creating a file/project 
+#Creating a file/project 
 
 
 
@@ -239,24 +241,24 @@ or
 let x: i128 = 12;
 
 It has 
-Scalar Types:
+#Scalar Types:
     signed   integers: i8, i16, i32, i64, i128 and isize (pointer size)
     unsigned integers: u8, u16, u32, u64, u128 and usize (pointer size)
     floating point: f32, f64
     char Unicode scalar values like 'a', 'α' and '∞' (4 bytes each)
     bool
     
-Compound Types
+#Compound Types
     arrays like [a, b, c,g]
     tuples like (1, true)
 
 
-Custom Types:
+#Custom Types:
 struct: define a structure 
     Tuple structs, which are, basically, named tuples.
     The classic C structs
     Unit structs, which are field-less, are useful for generics.
-enum: define an enumeration
+#enum: define an enumeration
 
 
 Names that start with an underscore are regular names, it’s just that the 
