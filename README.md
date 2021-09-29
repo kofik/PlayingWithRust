@@ -2,37 +2,52 @@
 Basics of Rust programming language
 
 # Introduction
-Rust is a C like programming language for hardware and easy to use as a scripting language
+Rust is a low level or a C like programming language for hardware and easy to use as a scripting language
+It can be easily use like node Expressjs or Python Flask with a high performance and less memory use.
 It combines power and simplicity in its eco-system.
+Fast Easy Flexible and Reliable are ways and love for Rust.
+
+The Rust programming language has gained a lot of attention from the community,
+ranking it as the most loved programming language on [StackOverflow](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages) developer survey each year since 2016 to 2020.
 
 In order to increase our fluency in Rust, we must read a lot of it. 
 We’ll try to go through as many Rust snippets as we can, and explain what 
 the keywords and symbols they contain mean.
 
 
-First of all lets introduce a quick list of testing tools 
+First of all lets introduce a quick list of testing tools.
 They will be useful as long as we go far 
 
-#SoapUI
+##Cargo
+Like npm or yarn in Javascript is use for intalling, creating, building, running Rust applications
+
+## Rustup
+Enable you to easily switch between stable, beta, and nightly compilers and keep them updated. 
+It makes cross-compiling simpler with binary builds of the standard library for common platforms.
+
+##SoapUI
 is a tool for functional testing, mainly of web services like SOAP based web services and 
 RESTful web services, but also HTTP based services and JMS Services as well as databases.
 
-#SOAtest
+##SOAtest
 
 Advanced REST client allows you to test your APIs
 
 Chrome → Postman is not a framework and is not a library, it is a simple plugin for Chrome browser
 
-Firefox → REST Easy
+##Firefox → REST Easy
 
-Retrofit is a well-known library for networking among Android developers
+##Retrofit 
+is a well-known library for networking among Android developers
 
-Fiddler is a Web Debugging Proxy which logs all HTTP(S) traffic between your computer and the Internet. 
+##Fiddler 
+is a Web Debugging Proxy which logs all HTTP(S) traffic between your computer and the Internet. 
 Fiddler allows you to inspect all HTTP(S) traffic, set breakpoints, and "fiddle" with 
 incoming or outgoing data. Fiddler includes a powerful event-based scripting subsystem, 
 and can be extended using any .NET language.
 
-REST Assured is most common Java library for REST api test automation
+##REST Assured 
+is most common Java library for REST api test automation
 @Test
 public void getCorrectData() {
     given.get("https://jsonplaceholder.typicode.com/users/1")
@@ -42,10 +57,11 @@ public void getCorrectData() {
             .assertThat()
             .body("name", equalTo("Kofi Barra"))
             .body("username", equalTo("kofik"))
-            .body("email", equalTo("info@web.tech"));
+            .body("email", equalTo("info@web.techy"));
 }
 
-Spring REST Template is a great library with which you can create a REST client
+##Spring REST Template 
+is a great library with which you can create a REST client
 @Test
 public void getCorrectData() {
     RestTemplate restTemplate = new RestTemplate();
@@ -58,19 +74,26 @@ public void getCorrectData() {
 }
 
 
-Actix web is a simple, pragmatic, extremely fast, web framework for Rust. 
-https://actix.rs/docs/
-https://github.com/actix/examples/tree/master/
-158 Contributors
+##Actix-web 
+is a simple, pragmatic, extremely fast, web framework for Rust. 
+[Actix web site] (https://actix.rs/docs/
+https://github.com/actix/examples/tree/master/)
+287 Contributors
+
 https://www.techempower.com/benchmarks/#section=data-r18
 Known to be use by MSN
 Seems to be the best framework for I/O
 
+[Axum] (https://tokio.rs/blog/2021-07-announcing-axum) 
+Announced the 07/30/2021 is a new born framework with code beauty in mind and modularity.
+Seems to be rolling to all growing fastly and starred since it's born.
+It uses Askama the over loved Jinga2 not for Pythonist but for Rustaceans
+
 Every language has something like this. C++ has CAF, Scala has Akka, C# has Orleans.
 
-Juniper is a GraphQL server library for Rust
-https://github.com/graphql-rust/juniper
-https://www.youtube.com/watch?v=QXJ0wKBLt-8
+[Juniper] is a GraphQL server library for Rust
+(https://github.com/graphql-rust/juniper
+https://www.youtube.com/watch?v=QXJ0wKBLt-8)
 
 
 A safe, extensible ORM and Query Builder for Rust
@@ -78,21 +101,21 @@ http://diesel.rs
 https://github.com/diesel-rs/diesel
 155 Contributors
 
-A runtime for writing reliable asynchronous applications with Rust. Provides I/O, networking, scheduling, timers, ...
-https://tokio.rs
-233 Contributors
+[A runtime] for writing reliable asynchronous applications with Rust. Provides I/O, networking, scheduling, timers, ...
+(https://tokio.rs)
+510 Contributors
 
-Rocket is a web framework for nightly with a focus on ease-of-use, expressibility, and speed. 
-https://rocket.rs/guide/
-141 Contributors
+[Rocket] is a web framework for nightly with a focus on ease-of-use, expressibility, and speed. 
+(https://rocket.rs/guide/)
+225 Contributors
 Not yet a stable version
 Must be with version 0.5 to be release
 Not yet asynchronous
 
 
-Gotham flexible web framework that promotes stability, safety, security and speed. 
-https://gotham.rs/
-36 Contributors
+[Gotham] flexible web framework that promotes stability, safety, security and speed. 
+(https://gotham.rs/)
+54 Contributors
 
 
 
@@ -148,7 +171,7 @@ Windows: "%USERPROFILE%\.rustup\toolchains\lib\rustlib\nightly-x86_64-pc-windows
 
 
 
-#RustEditors
+##Rust Editors
 
 Launch VSCodium Quick Open (Ctrl+P), paste the following command, and press enter.
 codium install rust-lang.rust
@@ -209,7 +232,7 @@ In VSCodium go to Settings using cmd-, and put the following config elements the
 
 
 
-#Frameworks
+##Frameworks
 
 High-Level Server Frameworks
 actix-web  	 Base framework tokio
@@ -217,51 +240,88 @@ rocket	 Base framework hyper
 warp    Base framework hyper
 iron    Base framework hyper
 
-#Low-Level Frameworks
+##Low-Level Frameworks
 hyper
 
-#Frontend Frameworks
+##Frontend Frameworks
 tauri
 seed
 yew
 
 
 
-#Creating a file/project 
+##Creating a file/project 
 
 
 
 let introduces a variables:
-
+```rust
 let x;  
 x = 12;  
 <==>
 let x = 12;
 or
 let x: i128 = 12;
+```
 
 It has 
-#Scalar Types:
+##Scalar Types:
     signed   integers: i8, i16, i32, i64, i128 and isize (pointer size)
     unsigned integers: u8, u16, u32, u64, u128 and usize (pointer size)
     floating point: f32, f64
     char Unicode scalar values like 'a', 'α' and '∞' (4 bytes each)
     bool
     
-#Compound Types
+##Compound Types
     arrays like [a, b, c,g]
     tuples like (1, true)
 
 
-#Custom Types:
+##Custom Types:
 struct: define a structure 
     Tuple structs, which are, basically, named tuples.
     The classic C structs
     Unit structs, which are field-less, are useful for generics.
-#enum: define an enumeration
+
+##enum: define an enumeration
 
 
 Names that start with an underscore are regular names, it’s just that the 
 compiler won’t warn about them being unused:
 
+## Database connection:
+    
+##Diesel
+Seems to be the most mature 
 
+Sqlx
+is an SQL Toolkit for async, pure Rust SQL crate featuring compile-time checked queries without a DSL. 
+Supports PostgreSQL, MySQL, SQLite, and MSSQL. 
+It's not an ORM
+
+```rust
+use sqlx::postgres::PgPoolOptions;
+// use sqlx::mysql::MySqlPoolOptions;
+
+#[async_std::main]
+async fn main() -> Result<(), sqlx::Error> {
+  
+    let pool = PgPoolOptions::new()
+        .max_connections(5)
+        .connect("postgres://postgres:password@localhost/test").await?;
+
+    // Make a simple query to return the given parameter (use a question mark `?` instead of `$1` for MySQL)
+    let row: (i64,) = sqlx::query_as("SELECT $1")
+        .bind(150_i64)
+        .fetch_one(&pool).await?;
+
+    assert_eq!(row.0, 150);
+
+    Ok(())
+}
+    
+```    
+Postgres MySql and Sqlite are supported
+
+Finaly a place that help you building  your [docs](https://dillinger.io/)
+    
