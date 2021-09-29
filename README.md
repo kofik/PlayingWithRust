@@ -323,5 +323,12 @@ async fn main() -> Result<(), sqlx::Error> {
 ```    
 Postgres MySql and Sqlite are supported
 
-Finaly a place that help you building  your [docs](https://dillinger.io/)
+Finaly a place that help you building  your [docs](https://dillinger.io/) and [ here ] (http://githubs.blogspot.com/)
+
+##License
+    
+To be defined 
+    
+Happy coding !
+    
     
