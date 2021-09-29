@@ -226,8 +226,7 @@ It uses Askama the over loved Jinga2 not for Pythonist but for Rustaceans
 
 Every language has something like this. C++ has CAF, Scala has Akka, C# has Orleans.
 
-[Juniper](https://github.com/graphql-rust/juniper
-https://www.youtube.com/watch?v=QXJ0wKBLt-8)
+[Juniper](https://github.com/graphql-rust/juniper) and a [video](https://www.youtube.com/watch?v=QXJ0wKBLt-8) about it
 is a GraphQL server library for Rust
 
 [A runtime](https://tokio.rs) for writing reliable asynchronous applications with Rust. Provides I/O, networking, scheduling, timers, ...
