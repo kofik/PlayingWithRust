@@ -1,23 +1,6 @@
 # PlayingWithRust
 Basics of Rust programming language
 
-#Install Rust
-
-```shell
-Installing rustup on Linux or macOS
-rustup is an installer for the systems programming language Rust
-curl https://sh.rustup.rs -sSf | sh
-or
-git clone https://github.com/rust-lang/rust.git
-cd rust
-cp config.toml.example config.toml
-./x.py build && ./x.py install
-./x.py install cargo 
-    
-
-//or set the build.extended key in 
-config.toml to true
-```
 
 # Introduction
 Rust is a low level or a C like programming language for hardware and easy to use as a scripting language
@@ -31,6 +14,26 @@ ranking it as the most loved programming language on [StackOverflow](https://ins
 In order to increase our fluency in Rust, we must read a lot of it. 
 We’ll try to go through as many Rust snippets as we can, and explain what 
 the keywords and symbols they contain mean.
+
+
+#Install Rust
+
+Installing rustup on Linux or macOS
+rustup is an installer for the systems programming language Rust
+```shell
+curl https://sh.rustup.rs -sSf | sh
+```
+or
+```shell
+git clone https://github.com/rust-lang/rust.git
+cd rust
+cp config.toml.example config.toml
+./x.py build && ./x.py install
+./x.py install cargo 
+```
+or set the build.extended key in 
+config.toml to true
+
 
 
 First of all lets introduce a quick list of testing tools.
@@ -138,28 +141,28 @@ Mac: DYLD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$DYLD_LIBRARY_PATH
 Windows: "%USERPROFILE%\.rustup\toolchains\lib\rustlib\nightly-x86_64-pc-windows-msvc\lib\"
 
 
-##SoapUI
+#SoapUI
 is a tool for functional testing, mainly of web services like SOAP based web services and 
 RESTful web services, but also HTTP based services and JMS Services as well as databases.
 
-##SOAtest
+#SOAtest
 
 Advanced REST client allows you to test your APIs
 
 Chrome → Postman is not a framework and is not a library, it is a simple plugin for Chrome browser
 
-##Firefox → REST Easy
+#Firefox → REST Easy
 
-##Retrofit 
+#Retrofit 
 is a well-known library for networking among Android developers
 
-##Fiddler 
+#Fiddler 
 is a Web Debugging Proxy which logs all HTTP(S) traffic between your computer and the Internet. 
 Fiddler allows you to inspect all HTTP(S) traffic, set breakpoints, and "fiddle" with 
 incoming or outgoing data. Fiddler includes a powerful event-based scripting subsystem, 
 and can be extended using any .NET language.
 
-##REST Assured 
+#REST Assured 
 is most common Java library for REST api test automation
 
 ```java
@@ -176,7 +179,7 @@ public void getCorrectData() {
 }
 ```
 
-##Spring REST Template 
+#Spring REST Template 
 is a great library with which you can create a REST client
 
 ```java
@@ -192,29 +195,42 @@ public void getCorrectData() {
 }
 ```
 
+
+```rust
+use chrono::{DateTime, Local, Utc};
+pub struct Blog {
+    pub id: i32,
+    pub title: String,
+    pub body: String,
+    pub created_at: DateTime<Utc>,
+    pub updated_at: DateTime<Utc>,
+    pub published BOOLEAN,
+  
+}
+```
+
+
 ##Actix-web 
 is a simple, pragmatic, extremely fast, web framework for Rust. 
-[Actix web site] (https://actix.rs/docs/
-https://github.com/actix/examples/tree/master/)
+[Actix web site](https://actix.rs/docs/)
 287 Contributors
 
-[Benchmark] (https://www.techempower.com/benchmarks/#section=data-r18)
+[Benchmark](https://www.techempower.com/benchmarks/#section=data-r18)
 Known to be use by MSN
 Seems to be the best and mature framework for I/O
 
-[Axum] (https://tokio.rs/blog/2021-07-announcing-axum) 
+[Axum](https://tokio.rs/blog/2021-07-announcing-axum) 
 Announced the 07/30/2021 is a new born framework with code beauty in mind and modularity.
 Seems to be rolling to all growing fastly and starred since it's born.
 It uses Askama the over loved Jinga2 not for Pythonist but for Rustaceans
 
 Every language has something like this. C++ has CAF, Scala has Akka, C# has Orleans.
 
-[Juniper] (https://github.com/graphql-rust/juniper
+[Juniper](https://github.com/graphql-rust/juniper
 https://www.youtube.com/watch?v=QXJ0wKBLt-8)
 is a GraphQL server library for Rust
 
-[A runtime] for writing reliable asynchronous applications with Rust. Provides I/O, networking, scheduling, timers, ...
-(https://tokio.rs)
+[A runtime](https://tokio.rs) for writing reliable asynchronous applications with Rust. Provides I/O, networking, scheduling, timers, ...
 510 Contributors
 
 [Rocket] is a web framework for nightly with a focus on ease-of-use, expressibility, and speed. 
@@ -225,8 +241,7 @@ Must be with version 0.5 to be release
 Not yet asynchronous
 
 
-[Gotham] flexible web framework that promotes stability, safety, security and speed. 
-(https://gotham.rs/)
+[Gotham](https://gotham.rs/) is a flexible web framework that promotes stability, safety, security and speed. 
 54 Contributors
 
 
@@ -266,8 +281,7 @@ source ~/.vimrc
 
 #Clippy requiring a nightly compiler.
 
-```
-shell
+```shell
 rustup install nightly
 rustup default nightly
 ```
@@ -308,10 +322,10 @@ In VSCodium go to Settings using cmd-, and put the following config elements the
 ##Frameworks
 
 #High-Level Server Frameworks
-actix-web  	 Base framework tokio
-rocket	 Base framework hyper
-warp    Base framework hyper
-iron    Base framework hyper
+actix-web  	 Base framework     tokio
+rocket	     Base framework     hyper
+warp         Base framework     hyper
+iron         Base framework     hyper
 
 #Low-Level Frameworks
 hyper
@@ -333,7 +347,7 @@ It is a safe, extensible ORM and Query Builder for Rust
     
 ```shell
 cargo install diesel_cli --no-default-features --features postgres
-echo DATABASE_URL=postgres://username:password@localhost/diesel_demo > .env
+echo "DATABASE_URL=postgres://username:password@localhost/diesel_demo "> .env
 disel setup
 diesel migration generate create blog
 diesel migration run
@@ -371,7 +385,6 @@ It's not an ORM
 
 ```rust
 use sqlx::postgres::PgPoolOptions;
-// use sqlx::mysql::MySqlPoolOptions;
 
 #[async_std::main]
 async fn main() -> Result<(), sqlx::Error> {
@@ -380,7 +393,6 @@ async fn main() -> Result<(), sqlx::Error> {
         .max_connections(5)
         .connect("postgres://postgres:password@localhost/test").await?;
 
-    // Make a simple query to return the given parameter (use a question mark `?` instead of `$1` for MySQL)
     let row: (i64,) = sqlx::query_as("SELECT $1")
         .bind(150_i64)
         .fetch_one(&pool).await?;
@@ -393,13 +405,9 @@ async fn main() -> Result<(), sqlx::Error> {
 
 Postgres MySql and Sqlite are supported
 
+
 Finaly a place that help you building  your [docs](https://dillinger.io/) and [here](http://githubs.blogspot.com/)
 
-
-
-##License
-    
-To be defined 
 
 
 
