@@ -4,7 +4,7 @@ Basics of Rust programming language
 
 # Introduction
 Rust is a low level or a C like programming language for hardware and easy to use as a scripting language
-It can be easily use like node Expressjs or Python Flask with a high performance and less memory use.
+It can be easily use like Ruby Sinatra, node Expressjs or Python Flask with a high performance and less memory use.
 It combines power and simplicity in its eco-system.
 Fast Easy Flexible and Reliable are ways and love for Rust.
 
